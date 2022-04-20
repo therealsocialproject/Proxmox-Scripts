@@ -9,16 +9,27 @@
 #######################
 
 #Grep containers
-containers=$(pct list | grep "running" | cut -f1 -d' ')
+containers=$(pct list | tail -n +2 | cut -f1 -d' ')
 
 #Wrap function
 function update_container() {
    container=$1
-    echo "Updating $container..."
-   pct exec $container -- bash -c "apt update && apt upgrade -y"
+   echo "[Info] Updating $container"
+   pct exec $container -- bash -c "apt update && apt upgrade -y && apt autoremove -y"
 }
 
 for container in $containers
- do
-   update_container $container
- done
+do
+  status=`pct status $container`
+  if [ "$status" == "status: stopped" ]; then
+    echo [Info] Starting $container
+    pct start $container
+    echo [Info] Sleeping 5 seconds
+    sleep 5
+    update_container $container
+    echo [Info] Shutting down $container
+    pct shutdown $container &
+  elif [ "$status" == "status: running" ]; then
+    update_container $container
+  fi
+done; wait
