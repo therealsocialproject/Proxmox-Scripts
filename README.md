@@ -23,7 +23,7 @@ ________________________________________________________________________________
  <details>
 <summary markdown="span"> Update Proxmox LXC </summary>
  
-<p align="center"><img src="https://camo.githubusercontent.com/f6f33a09f8c1207dfb3dc1cbd754c2f3393562c11b1c999751ad9a91a656834a/68747470733a2f2f692e696d6775722e636f6d2f536e6c437948462e706e67" height="100"/></p>
+<p align="center"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.reddit.com%2Fr%2FProxmox%2Fcomments%2Fov6gd4%2Frocky_linux_container_template%2F&psig=AOvVaw0MXjgsEFLX7QSnhZCz6_qR&ust=1650628778761000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCPiozMKNpfcCFQAAAAAdAAAAABAD" height="100"/></p>
 
 <h1 align="center" id="heading"> Update Proxmox LXC </h1>
 
