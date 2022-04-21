@@ -32,7 +32,7 @@ A LXC Update script for Proxmox by [Sam Wozencroft](https://github.com/samwozenc
 Run the following in the Proxmox Shell.
 
 ```yaml
-bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/update-containers.sh ) install
+bash -c "$(wget -qLO - https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/update-containers.sh)"
 ```
 ____________________________________________________________________________________________ 
 
