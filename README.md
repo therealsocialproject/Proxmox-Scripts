@@ -23,7 +23,7 @@ ________________________________________________________________________________
  <details>
 <summary markdown="span"> Update Proxmox LXC </summary>
  
-<p align="center"><img src="https://external-preview.redd.it/ck_Xs92gK1oKfN4T1YVn905hIokADVfoQq1rN4CIZk4.jpg?auto=webp&s=c956144cd91c15c0157afc7cc9cb0910b4899808" height="100"/></p>
+<p align="center"><img src="https://linuxcontainers.org/static/img/containers.png" height="100"/></p>
 
 <h1 align="center" id="heading"> Update Proxmox LXC </h1>
 
