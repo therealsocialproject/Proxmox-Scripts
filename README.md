@@ -6,12 +6,12 @@
 
 <h1 align="center" id="heading"> Proxmox Discord Dark Theme </h1>
 
-A dark theme for the Proxmox Web UI by [Weilbyte](https://github.com/Weilbyte/PVEDiscordDark)
+A modified dark theme for the Proxmox Web UI by [Weilbyte](https://github.com/Weilbyte/PVEDiscordDark)
  
 Run the following in the Proxmox Shell.
 
 ```yaml
-bash <(curl -s https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/PVEDiscordDark.sh ) install
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/darktheme.sh ) install
 ```
 
 To uninstall the theme, simply run the script with the `uninstall` command.
