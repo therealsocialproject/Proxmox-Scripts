@@ -16,6 +16,8 @@ bash <(curl -s https://raw.githubusercontent.com/Weilbyte/PVEDiscordDark/master/
 ```
 
 To uninstall the theme, simply run the script with the `uninstall` command.
+            
+            </detials>
 
 Proxmox-Scripts
 
