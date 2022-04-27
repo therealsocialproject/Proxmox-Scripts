@@ -55,21 +55,3 @@ bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/m
 ____________________________________________________________________________________________ 
 
 </details>
-    
-    <details>
-<summary markdown="span"> Update Proxmox LXC </summary>
- 
-<p align="center"><img src="https://linuxcontainers.org/static/img/containers.png" height="100"/></p>
-
-<h1 align="center" id="heading"> Update Proxmox LXC </h1>
-
-A LXC Update script for Proxmox by [Sam Wozencroft](https://github.com/samwozencroft)
- 
-Run the following in the Proxmox Shell.
-
-```yaml
-bash -c "$(wget -qLO - https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/update-containers.sh)"
-```
-____________________________________________________________________________________________ 
-
-</details>
