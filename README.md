@@ -55,20 +55,20 @@ bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/m
 ____________________________________________________________________________________________ 
 
 </details>
-
+    
     <details>
-<summary markdown="span"> Post install Poxmox Script </summary>
+<summary markdown="span"> Update Proxmox LXC </summary>
  
-<p align="center"><img src="https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/proxmox-512.png" height="100"/></p>
+<p align="center"><img src="https://linuxcontainers.org/static/img/containers.png" height="100"/></p>
 
-<h1 align="center" id="heading"> Post install Poxmox Script </h1>
+<h1 align="center" id="heading"> Update Proxmox LXC </h1>
 
-A script to run on post install for Proxmox by [Sam Wozencroft](https://github.com/samwozencroft)
+A LXC Update script for Proxmox by [Sam Wozencroft](https://github.com/samwozencroft)
  
 Run the following in the Proxmox Shell.
 
 ```yaml
-bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/post-install.sh ) install
+bash -c "$(wget -qLO - https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/update-containers.sh)"
 ```
 ____________________________________________________________________________________________ 
 
