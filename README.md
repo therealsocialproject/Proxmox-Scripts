@@ -58,18 +58,18 @@ ________________________________________________________________________________
 
 
 <details>
-<summary markdown="span"> Post install Poxmox Script </summary>
+<summary markdown="span"> Ubuntu LXC </summary>
  
-<p align="center"><img src="https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/proxmox-512.png" height="100"/></p>
+<p align="center"><img src="https://raw.githubusercontent.com/docker-library/docs/01c12653951b2fe592c1f93a13b4e289ada0e3a1/ubuntu/logo.png" height="100"/></p>
 
-<h1 align="center" id="heading"> Post install Poxmox Script </h1>
+<h1 align="center" id="heading"> Ubuntu LXC </h1>
 
-A script to run on post install for Proxmox by [Sam Wozencroft](https://github.com/samwozencroft)
+A Ubuntu LXC script for Proxmox by [Sam Wozencroft](https://github.com/samwozencroft)
  
 Run the following in the Proxmox Shell.
 
 ```yaml
-bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/post-install.sh ) install
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/ubuntu-lxc.sh ) install
 ```
 ____________________________________________________________________________________________ 
 
