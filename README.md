@@ -56,7 +56,7 @@ ________________________________________________________________________________
 
 </details>
     
-       <details>
+    <details>
 <summary markdown="span"> Ubuntu LXC </summary>
  
 <p align="center"><img src="https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/proxmox-512.png" height="100"/></p>
