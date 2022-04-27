@@ -43,7 +43,7 @@ ________________________________________________________________________________
  
 <p align="center"><img src="https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/proxmox-512.png" height="100"/></p>
 
-<h1 align="center" id="heading"> Update Proxmox LXC </h1>
+<h1 align="center" id="heading"> Post install Poxmox Script </h1>
 
 A script to run on post install for Proxmox by [Sam Wozencroft](https://github.com/samwozencroft)
  
