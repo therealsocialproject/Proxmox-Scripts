@@ -55,3 +55,21 @@ bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/m
 ____________________________________________________________________________________________ 
 
 </details>
+    
+       <details>
+<summary markdown="span"> Ubuntu LXC </summary>
+ 
+<p align="center"><img src="https://cdn4.iconfinder.com/data/icons/logos-brands-5/24/proxmox-512.png" height="100"/></p>
+
+<h1 align="center" id="heading"> Ubuntu LXC </h1>
+
+A Ubuntu LXC script for Proxmox by [Sam Wozencroft](https://github.com/samwozencroft)
+ 
+Run the following in the Proxmox Shell.
+
+```yaml
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/ubuntu-lxc.sh ) install
+```
+____________________________________________________________________________________________ 
+
+</details>
