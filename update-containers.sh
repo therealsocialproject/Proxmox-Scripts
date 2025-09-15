@@ -43,6 +43,16 @@ function update_container() {
   clear
   header_info
   echo -e "${BL}[Info]${GN} Updating${BL} $container ${CL} \n"
+
+  # Check Ubuntu codename inside container
+  codename=$(pct exec $container -- bash -c "source /etc/os-release && echo \$VERSION_CODENAME")
+
+  # Patch sources.list if release is Oracular (or any known EOL codename)
+  if [[ \"$codename\" == \"oracular\" || \"$codename\" == \"groovy\" || \"$codename\" == \"eoan\" || \"$codename\" == \"hirsute\" ]]; then
+    echo -e "${BL}[Info]${RD} $codename is EOL. Rewriting sources.list to use old-releases.ubuntu.com...${CL}"
+    pct exec $container -- bash -c "sed -i 's|http://archive.ubuntu.com/ubuntu|http://old-releases.ubuntu.com/ubuntu|g' /etc/apt/sources.list"
+  fi
+
   pct exec $container -- bash -c "apt update && apt upgrade -y && apt autoremove -y"
 }
 read -p "Skip stopped containers? " -n 1 -r
