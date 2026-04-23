@@ -74,3 +74,56 @@ bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/m
 ____________________________________________________________________________________________ 
 
 </details>
+
+<details>
+<summary markdown="span"> Proxmox Storage Audit Script </summary>
+
+<p align="center"><img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" height="100"/></p>
+
+<h1 align="center">Proxmox Storage Audit</h1>
+
+Audit all Proxmox storage backends and identify:
+
+- orphaned VM disks  
+- unused container volumes  
+- leftover cloud-init images  
+- ambiguous or unmanaged volumes  
+
+The script classifies volumes into:
+
+- `IN_USE`
+- `LIKELY_ORPHAN`
+- `AMBIGUOUS`
+- `SPECIAL_SKIP`
+
+By default, it **hides active volumes** and focuses on what actually needs attention.
+
+---
+
+### Run audit (safe)
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/proxmox-storage-audit.sh) --dry-run
+```
+
+### Show everything (verbose mode)
+```bash
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/proxmox-storage-audit.sh) --dry-run --show-in-use --show-special
+```
+
+### Export report
+```bash
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/proxmox-storage-audit.sh) --dry-run --csv report.csv
+```
+
+### Delete orphaned volumes (interactive)
+```bash
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/proxmox-storage-audit.sh) --delete-orphans
+```
+
+### Delete all orphaned volumes (no prompts)
+```bash
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/proxmox-storage-audit.sh) --delete-orphans --yes
+```
+
+
