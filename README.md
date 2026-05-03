@@ -126,4 +126,10 @@ bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/m
 bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/proxmox-storage-audit.sh) --delete-orphans --yes
 ```
 
+<summary markdown="span"> Dan's Whisking Tool </summary>
 
+<img width="512" height="512" alt="whisk" src="https://github.com/user-attachments/assets/6b74056e-7f12-458d-a939-1c1efb501212" />
+
+```bash
+bash -c "$(wget -qLO - https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/io_speedtest.sh)"
+```
