@@ -128,7 +128,7 @@ bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/m
 
 <summary markdown="span"> Dan's Whisking Tool </summary>
 
-<img width="512" height="512" alt="whisk" src="https://github.com/user-attachments/assets/6b74056e-7f12-458d-a939-1c1efb501212" />
+[<img width="512" height="512" alt="whisk" src="https://github.com/user-attachments/assets/6b74056e-7f12-458d-a939-1c1efb501212" />](https://cdn-icons-png.flaticon.com/512/1046/1046784.png)
 
 ```bash
 bash -c "$(wget -qLO - https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/io_speedtest.sh)"
