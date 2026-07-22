@@ -31,7 +31,7 @@ if [[ "$start_id" =~ ^[0-9]+$ ]] && [[ "$end_id" =~ ^[0-9]+$ ]]; then
     # Loop to create clones
     for (( current_id=start_id; current_id<=end_id; current_id++ ))
     do
-        new_vm_name="${template_name}"
+        new_vm_name="${template_name}-${current_id}"
         echo "Creating ${clone_option:2} clone of VM ${vm_id} with ID ${current_id} and name ${new_vm_name}..."
         qm clone ${vm_id} ${current_id} ${clone_option} --name ${new_vm_name}
     done

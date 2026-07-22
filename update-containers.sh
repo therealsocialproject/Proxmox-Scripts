@@ -44,16 +44,43 @@ function update_container() {
   header_info
   echo -e "${BL}[Info]${GN} Updating${BL} $container ${CL} \n"
 
-  # Check Ubuntu codename inside container
-  codename=$(pct exec $container -- bash -c "source /etc/os-release && echo \$VERSION_CODENAME")
+  # Get OS type from container config
+  os=$(pct config "$container" | awk '/^ostype/ {print $2}')
 
-  # Patch sources.list if release is Oracular (or any known EOL codename)
-  if [[ \"$codename\" == \"oracular\" || \"$codename\" == \"groovy\" || \"$codename\" == \"eoan\" || \"$codename\" == \"hirsute\" ]]; then
-    echo -e "${BL}[Info]${RD} $codename is EOL. Rewriting sources.list to use old-releases.ubuntu.com...${CL}"
-    pct exec $container -- bash -c "sed -i 's|http://archive.ubuntu.com/ubuntu|http://old-releases.ubuntu.com/ubuntu|g' /etc/apt/sources.list"
-  fi
-
-  pct exec $container -- bash -c "apt update && apt upgrade -y && apt autoremove -y"
+  case "$os" in
+    ubuntu|debian|devuan)
+      # Check Ubuntu/Debian codename inside container
+      if pct exec "$container" -- [ -f /etc/os-release ]; then
+        codename=$(pct exec $container -- bash -c "source /etc/os-release && echo \$VERSION_CODENAME")
+        if [[ "$codename" == "oracular" || "$codename" == "groovy" || "$codename" == "eoan" || "$codename" == "hirsute" ]]; then
+          echo -e "${BL}[Info]${RD} $codename is EOL. Rewriting sources.list to use old-releases.ubuntu.com...${CL}"
+          pct exec $container -- bash -c "sed -i 's|http://archive.ubuntu.com/ubuntu|http://old-releases.ubuntu.com/ubuntu|g' /etc/apt/sources.list"
+        fi
+      fi
+      pct exec $container -- bash -c "apt-get update && apt-get dist-upgrade -y && apt-get autoremove -y"
+      ;;
+    alpine)
+      echo -e "${BL}[Info]${GN} Alpine Linux detected. Running apk update/upgrade...${CL}"
+      pct exec $container -- apk update
+      pct exec $container -- apk upgrade
+      ;;
+    centos|almalinux|rocky|fedora)
+      echo -e "${BL}[Info]${GN} RedHat-based distro ($os) detected. Running dnf/yum upgrade...${CL}"
+      if pct exec $container -- hash dnf 2>/dev/null; then
+        pct exec $container -- dnf upgrade -y
+      else
+        pct exec $container -- yum update -y
+      fi
+      ;;
+    archlinux)
+      echo -e "${BL}[Info]${GN} Arch Linux detected. Running pacman system upgrade...${CL}"
+      pct exec $container -- pacman -Syu --noconfirm
+      ;;
+    *)
+      echo -e "${BL}[Info]${RD} Unknown OS type '$os'. Attempting generic apt update...${CL}"
+      pct exec $container -- bash -c "apt-get update && apt-get dist-upgrade -y" || true
+      ;;
+  esac
 }
 read -p "Skip stopped containers? " -n 1 -r
 echo

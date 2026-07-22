@@ -15,11 +15,18 @@ if echo "$container_id" | grep -q "template"; then
     container_id=$(pvesh get /cluster/nextid)
 fi
 
+# Get the name/hostname of the template container
+template_name=$(pct config ${container_id} | grep hostname | cut -d':' -f2 | xargs)
+if [ -z "$template_name" ]; then
+    template_name="lxc"
+fi
+
 # Loop to create clones
 for (( current_id=$start_id; current_id<=$end_id; current_id++ ))
 do
-    echo "Cloning container ${container_id} to ${current_id}..."
-    pct clone ${container_id} ${current_id} --full
+    new_hostname="${template_name}-${current_id}"
+    echo "Cloning container ${container_id} to ${current_id} with hostname ${new_hostname}..."
+    pct clone ${container_id} ${current_id} --full --hostname "${new_hostname}"
 done
 
 echo "Cloning process completed."
