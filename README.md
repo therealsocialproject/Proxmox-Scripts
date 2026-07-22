@@ -133,3 +133,44 @@ bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/m
 ```bash
 bash -c "$(wget -qLO - https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/io_speedtest.sh)"
 ```
+
+____________________________________________________________________________________________ 
+
+</details>
+
+<details>
+<summary markdown="span"> PVE Kernel Clean </summary>
+
+<p align="center"><img src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png" height="100"/></p>
+
+<h1 align="center">PVE Kernel Clean</h1>
+
+A utility script to remove old, unused kernel images and free up space in `/boot`.
+
+Run the following in the Proxmox Shell.
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/pve-kernel-clean.sh)
+```
+____________________________________________________________________________________________ 
+
+</details>
+
+<details>
+<summary markdown="span"> Proxmox Datacenter Manager </summary>
+
+<p align="center"><img src="https://cdn-icons-png.flaticon.com/512/3686/3686730.png" height="100"/></p>
+
+<h1 align="center">Proxmox Datacenter Manager (PDM)</h1>
+
+Setup an LXC container running Proxmox Datacenter Manager (PDM) for centralized node and cluster management.
+
+Run the following in the Proxmox Shell.
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/samwozencroft/Proxmox-Scripts/main/proxmox-datacenter-manager.sh)
+```
+____________________________________________________________________________________________ 
+
+</details>
+
